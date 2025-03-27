@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Anjinho</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
+</head>
+<body>
+    <!-- Cena Diurna -->
+    <div id="dayScene">
+        <div id="physics-hearts"></div>
+        <h1>Te Amo</h1>
+        <div id="daysCounter"></div>
+        <p class="day-message">te amo,amo,amo,amo, para sempre e todas as nossas vidas</p>
+        <button id="nightBtn">Ver Nossa Lua</button>
+    </div>
+
+    <!-- Cena Noturna -->
+    <div id="nightScene" class="hidden">
+        <div id="interactive-sky"></div>
+        <div class="moon"></div>
+        <div id="stars-container"></div>
+        <div class="night-message">
+            <h2>Você sempre diz como a lua é linda...</h2>
+            <p>e olhar ela sempre me lembra você</p>
+            <button id="dayBtn">Voltar ao Dia</button>
+        </div>
+    </div>
+
+    <!-- Player de música do YouTube (oculto) -->
+    <div id="music-container">
+        <iframe id="youtubePlayer" width="0" height="0" src="https://www.youtube.com/embed/MOXgTIikrns?autoplay=1&loop=1&playlist=MOXgTIikrns" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

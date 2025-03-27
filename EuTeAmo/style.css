@@ -1,0 +1,211 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Short Stack', cursive;
+    background-color: #fff0f5;
+    overflow: hidden;
+    height: 100vh;
+    user-select: none;
+}
+
+#dayScene {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    transition: opacity 1s ease-out;
+}
+
+#physics-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff6b8b;
+    transform: rotate(-45deg);
+    pointer-events: none;
+}
+
+.heart:before, .heart:after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: #ff6b8b;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: 15px;
+}
+
+h1 {
+    color: #ff4d6d;
+    font-size: 4em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+#daysCounter {
+    color: #d23669;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    z-index: 2;
+    background-color: rgba(255,255,255,0.7);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.day-message {
+    color: #d23669;
+    font-size: 1.5em;
+    max-width: 80%;
+    z-index: 2;
+    background-color: rgba(255,255,255,0.7);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #ff6b8b;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    margin-top: 20px;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background-color: #ff4777;
+    transform: scale(1.05);
+}
+
+/* Cena Noturna */
+#nightScene {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0a0a2a, #1a1a4a);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s ease-in;
+    z-index: 0;
+}
+
+#nightScene.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#interactive-sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.moon {
+    width: 120px;
+    height: 120px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    box-shadow: 0 0 30px #f8f9fa;
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    animation: glow 3s infinite alternate;
+    z-index: 2;
+}
+
+#stars-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+    z-index: 1;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+                0 0 0 8px rgba(255,255,255,0.1),
+                0 0 20px rgba(255,255,255,1);
+    z-index: 3;
+}
+
+.night-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 3;
+    width: 80%;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.night-message h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.night-message p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#music-container {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 30px #f8f9fa; }
+    to { box-shadow: 0 0 60px #f8f9fa; }
+}
+
+@keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
